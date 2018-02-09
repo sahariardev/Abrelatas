@@ -7,6 +7,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 public class Controller {
+	List <Command> cmds;
+	public Controller()
+	{
+		ListCommand list=new ListCommand(); 
+		cmds=list.read("command.txt");
+		
+	}
 
 	@FXML
 	private TextField text;
@@ -18,62 +25,30 @@ public class Controller {
 		
 		
 		String input[]=text.getText().split(" ");
-		
-		
-		List <Command> cmd=new ArrayList<>();
-		//0
-		cmd.add(new Command("explorer.exe", "C:\\Program Files (x86)\\VideoLAN\\VLC"));
-		//1
-		cmd.add(new Command("C:\\Program Files (x86)\\VideoLAN\\VLC\\vlc.exe",""));
-		//2
-		cmd.add(new Command("explorer.exe", "D:\\JAVA TUTORIALS"));
-		//3
-		cmd.add(new Command("explorer.exe", "E:\\javaworkspace"));
-		
-		List<String> symbols=new ArrayList<>();
-		symbols.add("jt");
-		
 		try {
-			
 			String arr[]=new String[2];
-			if(input[0].equalsIgnoreCase("jt"))
+			String dflt []={"explorer.exe","D:\\JAVA TUTORIALS"};
+			boolean flag  =false;
+			for(Command cmd:cmds)
 			{
-				arr=cmd.get(2).get();
+			  if(cmd.getSymbol().equalsIgnoreCase(input[0]))
+			  {
+				  flag=true;
+				  arr=cmd.get();
+				  
+			  }
 			}
-			else if(input[0].equalsIgnoreCase("jw"))
+			if(!flag)
 			{
-				arr=cmd.get(3).get();
+				arr=dflt;
 			}
-			else
-			{
-				arr=cmd.get(0).get();
-			}
+			System.out.println(arr[0]+" from the vault "+arr[1]);
 			Runtime.getRuntime().exec(arr);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println(e);
+			
+			System.out.println(e.getStackTrace());
 		}
 	}
 	
 }
-class Command
-{
-	
-	public String arr[];
-	
-	public Command(String s,String s2)
-	{
-		arr=new String[2];
-		arr[0]=s;
-		arr[1]=s2;
-	}
-	public String [] get()
-	{
-		return arr;
-	}
-	public void add(String s)
-	{
-		arr[1]=arr[1]+"s";
-	}
-	
-}
+

@@ -1,0 +1,6 @@
+jtB!Qexplorer.exeB!QD:\JAVA TUTORIALS
+jwB!Qexplorer.exeB!QE:\javaworkspace
+nwB!Qexplorer.exeB!QE:\node projects
+dsch2B!QF:\Export dsch2\Export dsch2\Dsch2.exeB!Q 
+studyB!Qexplorer.exeB!QD:\10study
+sublimeB!QD:\software\Sublime Text Build 3143 x64\sublime_text.exeB!Q 
