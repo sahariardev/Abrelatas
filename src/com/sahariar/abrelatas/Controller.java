@@ -1,10 +1,11 @@
 package com.sahariar.abrelatas;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class Controller {
 	List <Command> cmds;
@@ -17,6 +18,15 @@ public class Controller {
 
 	@FXML
 	private TextField text;
+	
+	@FXML
+	public void enterPresses(KeyEvent event)
+	{
+		if (event.getCode().equals(KeyCode.ENTER)) {
+	        open();
+			
+	    }	
+	}
 	
 	@FXML
 	public void open()

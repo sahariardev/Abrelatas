@@ -6,18 +6,18 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sahariar.abrelatas.Controller">
-   <left>
-      <TextField fx:id="text" onAction="#open" prefHeight="39.0" prefWidth="315.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="30.0" />
-         </BorderPane.margin>
-      </TextField>
-   </left>
    <right>
-      <Button fx:id="btn" mnemonicParsing="false" onAction="#open" prefHeight="37.0" prefWidth="113.0" text="Open" BorderPane.alignment="CENTER">
+      <Button fx:id="btn" mnemonicParsing="false" onAction="#open" opacity="0.8" prefHeight="37.0" prefWidth="113.0" text="Open" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets right="30.0" />
          </BorderPane.margin>
       </Button>
    </right>
+   <center>
+      <TextField fx:id="text" onKeyPressed="#enterPresses" opacity="0.8" prefHeight="39.0" prefWidth="315.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="30.0" />
+         </BorderPane.margin>
+      </TextField>
+   </center>
 </BorderPane>
